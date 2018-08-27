@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<h2>使用axios</h2>
+<script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+<script>
+  // axios('https://bird.ioliu.cn/weather?city=兰州')
+  //   .then(function (response) {
+  //     let list = response.data.result.daily;
+  //     console.log(list);
+  //   }).catch(function (error) {
+  //   console.log(error);
+  // })
+  // config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+  // axios.get('http://dcms.thedream.cc/snh48/gift/stat?callback=jQuery112408395746072642423_1535016626831&_=1535016626832',
+  //   {
+  //     content: 'hahah'
+  //   }, {
+  //     headers: {
+  //       'content-type': 'application/x-www-form-urlencoded'
+  //     }
+  //   })
+  //   .then(function (response) {
+  //     console.log(response);
+  //   }).catch(function (error) {
+  //   console.log(error);
+  // })
+
+  $.ajax({
+    url: 'http://dcms.thedream.cc/snh48/gift/stat?callback=jQuery112408395746072642423_1535016626831&_=1535016626832',
+    type: 'get',
+    dataType:'jsonp',
+    success: function (res) {
+      console.log(res);
+    },
+    error: function (error) {
+      console.log(error);
+    }
+  })
+
+  /*使用jsonp，不会报错，但是打印的不是想要的结果，*/
+  /*使用jsonp，可以解决跨域问题，接口没问题*/
+</script>
+</body>
+</html>
